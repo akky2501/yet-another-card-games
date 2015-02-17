@@ -4,4 +4,6 @@ yet-another-card-games
 git add README.md
 git commit -m "README"
 git push
+
+git pull
 ```
