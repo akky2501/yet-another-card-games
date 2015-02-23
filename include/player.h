@@ -15,7 +15,7 @@ class Player {
 
 	private:
 		std::string name_;
-		PlayerID id;
+		PlayerID id_;
 };
 
 #endif

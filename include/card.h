@@ -12,7 +12,11 @@ typedef unsigned int CardID;
 
 class Card {
 	public:
-		Card(CardID, std::string);
+		Card(CardID id, std::string name) {
+			id_ = id;
+			name_ = name;
+			owned_ = NULL;
+		};
 		virtual ~Card();
 		MoveToTop(Pile);
 		MoveToBottom(Pile);
@@ -25,7 +29,9 @@ class Card {
 
 class Pile {
 	public:
-		Pile(Player);
+		Pile(Player owned) {
+			owned_ = owned;
+		};
 		virtual ~Pile();
 		AddToTtop(Card);
 		AddToBottom(Card);
