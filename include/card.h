@@ -29,22 +29,12 @@ class Card {
 
 class Pile {
 	public:
-		Pile(Player owned) {
-			owned_ = owned;
-		};
+		Pile() {};
 		virtual ~Pile();
 		AddToTtop(Card);
 		AddToBottom(Card);
 
 	private:
-		enum attribute {
-			kDeck,
-			kHand,
-			kDiscard,
-			kField,
-			kExpelled_From_Everywhere,
-		} pile_attr_;
-		Player owned_;
 		std::deque<Card> pile_of_cards_;
 };
 
