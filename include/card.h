@@ -28,11 +28,11 @@ class Pile {
 	public:
 		Pile() {};
 		virtual ~Pile();
-		AddToTtop(Card);
+		AddToTop(Card);
 		AddToBottom(Card);
 
 	private:
-		std::deque<CardID> pile_of_cards_;
+		std::deque<Card *> pile_of_cards_;
 };
 
 #endif
