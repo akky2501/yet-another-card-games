@@ -7,7 +7,10 @@ typedef PlayerID;
 
 class Player {
 	public:
-		Player(PlayerID , std::string);
+		Player(PlayerID id, std::string name) {
+			id_ = id;
+			name_ = name;
+		};
 		virtual ~Player();
 
 	private:
