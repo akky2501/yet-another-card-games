@@ -8,23 +8,20 @@
 
 class Card;
 class Pile;
-typedef unsigned int CardID;
 
 class Card {
 	public:
-		Card(CardID id, std::string name) {
-			id_ = id;
+		Card(std::string name, Pile *owner) {
 			name_ = name;
-			owned_ = NULL;
+			owner_ = owner;
 		};
 		virtual ~Card();
 		MoveToTop(Pile);
 		MoveToBottom(Pile);
 
 	private:
-		CardID id_;
 		std::string name_;
-		Pile *owned_;
+		Pile *owner_;
 };
 
 class Pile {
@@ -35,7 +32,7 @@ class Pile {
 		AddToBottom(Card);
 
 	private:
-		std::deque<Card> pile_of_cards_;
+		std::deque<CardID> pile_of_cards_;
 };
 
 #endif
