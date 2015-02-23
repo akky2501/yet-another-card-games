@@ -11,14 +11,14 @@ basic type
 sub type
 - nothing too
 
-basic infomation
+basic info
 - card name
 - card id
 - and more
 
-extra infomation
+extra info
 - anything else
-  - you may make nested 
+  - you may make nested
   - structure
 
 making pile structure
@@ -30,5 +30,14 @@ pile of some cards
 feature
 ---
 - making piles for instance
-- easy to modify pile 
+- easy to modify pile
 - piles for players by itself
+
+allowed action
+---
+- draw a card from a library
+- discard a card from a hand to discard
+- play a card from a hand to field
+- and so on
+
+these action above is done through an unite function

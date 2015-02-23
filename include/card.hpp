@@ -6,23 +6,42 @@
 
 #include "player.hpp"
 
-;
+class Card;
+class Pile;
+typedef unsigned int CardID;
 
-struct card_data_t {
-	std::string name;
-	int card_NO;
+class Card {
+	public:
+		Card(CardID, std::string);
+		Card();
+		virtual ~Card();
+		MoveToTop(Pile);
+		MoveToBottom(Pile);
+
+	private:
+		CardID id_;
+		std::string name_;
+		Pile *owned_;
 };
 
-struct card_pile_t {
+class Pile {
+	public:
+		Pile(Player);
+		Pile();
+		virtual ~Pile();
+		AddToTtop(Card);
+		AddToBottom(Card);
+
+	private:
 		enum attribute {
-		DECK,
-		HAND,
-		DISCARD,
-		FIELD,
-		EXPELLED_FROM_EVERYWHERE,
-	} pile_attr;
-	player_t owned;
-	std::deque<card_data_t> pile;
+			kDeck,
+			kHand,
+			kDiscard,
+			kField,
+			kExpelled_From_Everywhere,
+		} pile_attr_;
+		Player owned_;
+		std::deque<Card> pile_of_cards_;
 };
 
 #endif

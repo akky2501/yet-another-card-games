@@ -1,9 +1,18 @@
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
 
-struct player_t {
-	std::string name;
-	int player_id;
+#include <string>
+
+typedef PlayerID;
+
+class Player {
+	public:
+		Player(PlayerID , std::string);
+		virtual ~Player();
+
+	private:
+		std::string name_;
+		PlayerID id;
 };
 
 #endif
