@@ -6,23 +6,22 @@
 
 #include "player.hpp"
 
-enum attribute {
-	DECK,
-	HAND,
-	DISCARD,
-	FIELD,
-	EXPELLED_FROM_EVERYWHERE,
-};
+;
 
 struct card_data_t {
 	std::string name;
 	int card_NO;
-	attribute card_attr
 };
 
 struct card_pile_t {
-	attribute pile_attr;
-	player owned;
+		enum attribute {
+		DECK,
+		HAND,
+		DISCARD,
+		FIELD,
+		EXPELLED_FROM_EVERYWHERE,
+	} pile_attr;
+	player_t owned;
 	std::deque<card_data_t> pile;
 };
 
